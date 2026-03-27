@@ -5,11 +5,25 @@ The agricultural sector faces significant challenges due to the variability of w
 Objective
 This project focuses on developing temperature prediction models using machine learning algorithms to empower farmers in making informed decisions regarding planting timing, crop selection, and resource allocation.
 
-Methodology
-Three algorithms - Linear Regression, SVR, and XGboost - are employed, with input variables selected based on their moderate to strong association with temperature.
+Data Exploration and Preprocessing
+Data Analysis: Inspected the dataset for shape, null values, data types, and statistical summary.
+Correlation Analysis: Generated a correlation matrix to identify relationships between variables.
+Visualization: Created violin and KDE plots to visualize distributions of key weather features.
+Outlier Detection and Handling: Identified and replaced outliers using the mean of respective columns.
+Normalization: Applied Min-Max Scaling to normalize the data for key weather features.
+Model Training
+Linear Regression and SVR
+Target Variables: tempmax and tempmin
+Data Splitting: The data was split into training and test sets in an 80/20 ratio.
+Evaluation: The models were evaluated using Mean Squared Error (MSE), Root Mean Squared Error (RMSE), and R-squared (R²) on both the training and test sets.
+XGBoost
+During the training of the XGBoost model, I encountered overfitting issues. To address this, I applied hyperparameter tuning to optimize the model’s performance and reduce overfitting.
+Evaluate and result
+Results for Tempmax
+image
 
-Significance
-Accurate temperature forecasts play a fundamental role in optimizing resource management, minimizing risks, and promoting sustainable agricultural practices. This project aims to contribute towards addressing the current challenges facing the agricultural sector.
+Results for Tempmin
+image
 
-Contributions
-This research builds upon existing studies exploring the intersection between temperature forecasting and agriculture, incorporating advancements in machine learning techniques and decision support systems tailored for temperature-sensitive farming methods.
+Conclusion
+XGBoost consistently outperforms both Linear Regression and SVR in predicting both maximum and minimum temperatures. It has the lowest MSE and RMSE, and the highest R² values in both scenarios, making it the most reliable and accurate model for this temperature prediction task. This demonstrates the effectiveness of XGBoost, especially after addressing overfitting issues through hyperparameter tuning.
